@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import br.com.ifac0.forum.controllers.form.TopicoForm;
+
 @Entity 
 public class Topico {
 	
@@ -30,6 +32,15 @@ public class Topico {
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
+	
+	public Topico() {
+	}	
+	
+	public Topico(String titulo, String mensagem, Curso curso) {
+		this.titulo = titulo;
+		this.mensagem = mensagem;
+		this.curso = curso;
+	}
 
 	@Override
 	public int hashCode() {
@@ -118,6 +129,6 @@ public class Topico {
 
 	public void setRespostas(List<Resposta> respostas) {
 		this.respostas = respostas;
-	}
+	}	
 
 }
