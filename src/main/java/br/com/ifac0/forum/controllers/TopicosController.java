@@ -9,12 +9,14 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.ifac0.forum.controllers.dto.DetalhesTopicoDto;
 import br.com.ifac0.forum.controllers.dto.TopicoDto;
 import br.com.ifac0.forum.controllers.form.TopicoForm;
 import br.com.ifac0.forum.models.Curso;
@@ -49,5 +51,17 @@ public class TopicosController {
 		
 		URI uri =  uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
 		return ResponseEntity.created(uri).body(new TopicoDto(topico));
+	}
+	
+	/**
+	 * Caso o nome que se encontra no GetMapping seja diferente do parametro do método 
+	 * se faz necessario informar o que vai vim da url;
+	 * Exemplo: @PathVariable("id")
+	 */
+	@GetMapping("/{id}")
+	public DetalhesTopicoDto detalhar(@PathVariable Long id) {
+		Topico topico = topicoRepository.getOne(id);
+		return new DetalhesTopicoDto(topico);
+		
 	}
 }
