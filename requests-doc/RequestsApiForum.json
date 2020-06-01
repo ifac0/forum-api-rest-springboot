@@ -1,0 +1,254 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "cfd905c9-7225-42cc-a504-75d76daabe2b",
+        "name": "SpringBootApi - Forum"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+              "name": "DELETE"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/topicos/3"
+            },
+            "id": "26bda879-3b0a-4a98-bb72-510dbeddc084",
+            "name": "DELETE - Topico",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/topicos"
+            },
+            "id": "11a57c64-c462-4267-8d7b-37d5d96324c5",
+            "name": "GET(All) - Topico",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "encoded": true,
+                    "name": "nomeCurso",
+                    "value": "Spring+Boot"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/topicos"
+            },
+            "id": "2073e6da-da78-4d25-bdfa-9499e4812588",
+            "name": "GET(nomeCurso) - Topico",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/topicos/3"
+            },
+            "id": "1623bb0e-95e5-40ab-8d0c-fad4e604cc26",
+            "name": "Get(Id) - Topico",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "bodyEvaluationDisabled": true,
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": [
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "titulo",
+                    "value": "Dúvida Postman"
+                  },
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "mensagem",
+                    "value": "Texto da mensagem"
+                  },
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "nomeCurso",
+                    "value": "Spring Boot"
+                  }
+                ]
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"titulo\": \"\",\n  \"mensagem\": \"Teste asdasdsdasdasdasdas2\",\n  \"nomeCurso\": \"Spring Boot\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/topicos"
+            },
+            "id": "33460c70-ab3d-42ce-8f3f-6e7a0dd0b638",
+            "name": "POST - Topico",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "context",
+                "value": ""
+              },
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+              "name": "PUT"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"titulo\": \"Trocou\",\n  \"mensagem\": \"Trocou mesmo\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/topicos/3"
+            },
+            "id": "5eac2336-5dd1-4c53-b399-f03b1922f509",
+            "name": "PUT - Topico",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
